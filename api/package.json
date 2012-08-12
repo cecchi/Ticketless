@@ -1,0 +1,12 @@
+{
+  "name": "Ticketless",
+  "description": "Last-minute ticket marketplace",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.0.0rc2",
+    "express-validator": "0.2.3",
+    "mysql": "2.0.0-alpha3",
+    "squel": "1.0.3"
+  }
+}
