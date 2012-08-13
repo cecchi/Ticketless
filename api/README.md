@@ -10,6 +10,37 @@ Last-minute ticket marketplace.
 
 ## API Endpoints
 
+<table>
+  <tr>
+    <th>METHOD</th><th>URI</th><th>BODY</th><th>RETURNS</th>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/tickets</td>
+    <td>
+      ```json
+      {
+        "event": {int},
+        "section": {string},
+        "row": {int},
+        "seats": {comma-delimited string},
+        "available": {boolean},
+        "seller": {int},
+        "price": {decimal},
+        "negotiable": {boolean}
+      }
+      ```
+    </td>
+    <td>`ticket`
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>/ticket/{ticket_id}</td>
+    <td></td>
+    <td>`ticket</td>
+  </tr>
+</table>
+
 ### POST */ticket*
 **Body:**
 
@@ -32,14 +63,14 @@ ticket
 ```
 ---------------------------------------
 ### PUT */ticket/{ticket_id}*
-**Purpose:** Updates information for a ticket
+**Purpose:** Updates information for a ticket  
 **Response Type:**
 ```json
 ticket
 ```
 ---------------------------------------
 ### GET */ticket/{ticket_id}*
-**Purpose:** Returns information about a ticket
+**Purpose:** Returns information about a ticket  
 **Response Type:**
 ```json
 ticket
