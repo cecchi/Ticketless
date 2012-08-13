@@ -8,7 +8,7 @@ Last-minute ticket marketplace.
 3. `npm install`
 4. `node server/server.js`
 
-## Api
+## API Endpoints
 
 ### POST */ticket*
 **Body:**
@@ -73,3 +73,7 @@ venue
 ```json
 [ticket, ticket, ticket, ... ticket]
 ```
+
+## API Response Types
+
+**Coming Soon**
