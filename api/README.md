@@ -30,7 +30,7 @@ Last-minute ticket marketplace.
 ```json
 ticket
 ```
-
+---------------------------------------
 ### POST */offer/{ticket_id}*
 **Body:**
 ```json
@@ -43,31 +43,31 @@ ticket
 ```json
 offer
 ```
-
+---------------------------------------
 ### GET */ticket/{ticket_id}*
 **Response Type:**
 ```json
 ticket
 ```
-
+---------------------------------------
 ### GET */event/{event_id}*
 **Response Type:**
 ```json
 event
 ```
-
+---------------------------------------
 ### GET */event/{event_id}/tickets*
 **Response Type:**
 ```json
 [ticket, ticket, ticket, ... ticket]
 ```
-
+---------------------------------------
 ### GET */venue/{venue_id}*
 **Response Type:**
 ```json
 venue
 ```
-
+---------------------------------------
 ### GET */venue/{venue_id}/tickets*
 **Response Type:**
 ```json
