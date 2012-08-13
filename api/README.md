@@ -83,6 +83,17 @@ venue
 
 ## API Response Types
 
+**All API responses will be wrapped in the following json:**
+```json
+{
+  "success": true,
+  "error": null,
+  "results": [ ]
+}
+```
+**The `results` array will be populated with zero or more results, each of one of the following response types**
+
+---------------------------------------
 ### *ticket*
 ```json
 {
