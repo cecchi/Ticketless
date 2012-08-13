@@ -10,9 +10,8 @@ Last-minute ticket marketplace.
 
 ## API Endpoints
 ### POST */ticket*
-**Purpose:** Adds a ticket to be sold
+**Purpose:** Adds a ticket to be sold  
 **Body:**
-
 ```json
 {
   "event": {int},
@@ -41,7 +40,7 @@ Last-minute ticket marketplace.
 
 ---------------------------------------
 ### POST */offer/{ticket_id}*
-**Purpose:** Adds an offer for, or buys, a ticket
+**Purpose:** Adds an offer for, or buys, a ticket  
 **Body:**
 ```json
 {
@@ -59,7 +58,7 @@ Last-minute ticket marketplace.
 
 ---------------------------------------
 ### GET */event/{event_id}/tickets*
-**Purpose:** Returns a list of tickets for an event
+**Purpose:** Returns a list of tickets for an event  
 **Body:** `empty`  
 **Response Type:** `[ticket, ticket, ticket, ... ticket]`
 
@@ -71,7 +70,7 @@ Last-minute ticket marketplace.
 
 ---------------------------------------
 ### GET */venue/{venue_id}/tickets*
-**Purpose:** Returns a list of tickets for a venue
+**Purpose:** Returns a list of tickets for a venue  
 **Body:** `empty`  
 **Response Type:** `[ticket, ticket, ticket, ... ticket]`
 
