@@ -31,26 +31,45 @@ Last-minute ticket marketplace.
 ticket
 ```
 
-### POST /offer/{ticket_id}
+### POST */offer/{ticket_id}*
+**Body:**
+```json
+{
+  "ticket": {int},
+  "price": {decimal}
+}
+```
+**Response Type:**
+```json
+offer
+```
 
-### GET /ticket/{ticket_id}
-  * Get data for a ticket
+### GET */ticket/{ticket_id}*
+**Response Type:**
+```json
+ticket
+```
 
-### GET /event/{event_id}
-  * Get data for a given event
+### GET */event/{event_id}*
+**Response Type:**
+```json
+event
+```
 
-### GET /event/{event_id}/tickets
-  * Get data for tickets for a given event
-    * Include basic data for the event itself
-    * Constrain by:
-      * Price
-      * Section
-      * Row
-      * Number of seats
+### GET */event/{event_id}/tickets*
+**Response Type:**
+```json
+[ticket, ticket, ticket, ... ticket]
+```
 
-### GET /venue/{venue_id}
-  * Get data for a given venue
+### GET */venue/{venue_id}*
+**Response Type:**
+```json
+venue
+```
 
-### GET /venue/{venue_id}/tickets
-  * Get data for tickets at a given venue
-    * Include basic data for the venue itself
+### GET */venue/{venue_id}/tickets*
+**Response Type:**
+```json
+[ticket, ticket, ticket, ... ticket]
+```
