@@ -86,8 +86,8 @@ venue
 **All API responses will be wrapped in the following json:**
 ```json
 {
-  "success": true,
-  "error": null,
+  "success": {boolean},
+  "error": {null || string},
   "results": [ ]
 }
 ```
