@@ -10,6 +10,7 @@ Last-minute ticket marketplace.
 
 ## API Endpoints
 ### POST */ticket*
+**Purpose:** Adds a ticket to be sold
 **Body:**
 
 ```json
@@ -24,27 +25,23 @@ Last-minute ticket marketplace.
   "negotiable": {boolean}
 }
 ```
-**Response Type:**
+**Response Type:** `ticket`
 
-```json
-ticket
-```
 ---------------------------------------
 ### PUT */ticket/{ticket_id}*
 **Purpose:** Updates information for a ticket  
-**Response Type:**
-```json
-ticket
-```
+**Body:** `TBD`  
+**Response Type:** `ticket`
+
 ---------------------------------------
 ### GET */ticket/{ticket_id}*
 **Purpose:** Returns information about a ticket  
-**Response Type:**
-```json
-ticket
-```
+**Body:** `empty`  
+**Response Type:** `ticket`
+
 ---------------------------------------
 ### POST */offer/{ticket_id}*
+**Purpose:** Adds an offer for, or buys, a ticket
 **Body:**
 ```json
 {
@@ -52,34 +49,31 @@ ticket
   "price": {decimal}
 }
 ```
-**Response Type:**
-```json
-offer
-```
+**Response Type:** `offer`
+
 ---------------------------------------
 ### GET */event/{event_id}*
-**Response Type:**
-```json
-event
-```
+**Purpose:** Returns information about an event  
+**Body:** `empty`  
+**Response Type:** `event`
+
 ---------------------------------------
 ### GET */event/{event_id}/tickets*
-**Response Type:**
-```json
-[ticket, ticket, ticket, ... ticket]
-```
+**Purpose:** Returns a list of tickets for an event
+**Body:** `empty`  
+**Response Type:** `[ticket, ticket, ticket, ... ticket]`
+
 ---------------------------------------
 ### GET */venue/{venue_id}*
-**Response Type:**
-```json
-venue
-```
+**Purpose:** Returns information about a venue  
+**Body:** `empty`  
+**Response Type:** `venue`
+
 ---------------------------------------
 ### GET */venue/{venue_id}/tickets*
-**Response Type:**
-```json
-[ticket, ticket, ticket, ... ticket]
-```
+**Purpose:** Returns a list of tickets for a venue
+**Body:** `empty`  
+**Response Type:** `[ticket, ticket, ticket, ... ticket]`
 
 ## API Response Types
 
