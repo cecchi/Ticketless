@@ -31,6 +31,20 @@ Last-minute ticket marketplace.
 ticket
 ```
 ---------------------------------------
+### PUT */ticket/{ticket_id}*
+**Purpose:** Updates information for a ticket
+**Response Type:**
+```json
+ticket
+```
+---------------------------------------
+### GET */ticket/{ticket_id}*
+**Purpose:** Returns information about a ticket
+**Response Type:**
+```json
+ticket
+```
+---------------------------------------
 ### POST */offer/{ticket_id}*
 **Body:**
 ```json
@@ -42,12 +56,6 @@ ticket
 **Response Type:**
 ```json
 offer
-```
----------------------------------------
-### GET */ticket/{ticket_id}*
-**Response Type:**
-```json
-ticket
 ```
 ---------------------------------------
 ### GET */event/{event_id}*
