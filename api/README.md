@@ -9,38 +9,6 @@ Last-minute ticket marketplace.
 4. `node server/server.js`
 
 ## API Endpoints
-
-<table>
-  <tr>
-    <th>METHOD</th><th>URI</th><th>BODY</th><th>RETURNS</th>
-  </tr>
-  <tr>
-    <td>POST</td>
-    <td>/tickets</td>
-    <td>
-      ```json
-      {
-        "event": {int},
-        "section": {string},
-        "row": {int},
-        "seats": {comma-delimited string},
-        "available": {boolean},
-        "seller": {int},
-        "price": {decimal},
-        "negotiable": {boolean}
-      }
-      ```
-    </td>
-    <td>`ticket`
-  </tr>
-  <tr>
-    <td>POST</td>
-    <td>/ticket/{ticket_id}</td>
-    <td></td>
-    <td>`ticket</td>
-  </tr>
-</table>
-
 ### POST */ticket*
 **Body:**
 
@@ -115,4 +83,53 @@ venue
 
 ## API Response Types
 
-**Coming Soon**
+### *ticket*
+```json
+{
+  "id": "1",
+  "section": "133",
+  "row": "10",
+  "price": "70.0000",
+  "seller": {
+    "id": "1",
+    "phone": "6175250192"
+  },
+  "event": {
+    "id": "1",
+    "name": "Red Sox @ Braves",
+    "category": 2,
+    "description": "",
+    "time": null,
+    "venue": {
+      "name": "Turner Field",
+      "latitude": null,
+      "longitude": null
+    }
+  }
+}
+```
+---------------------------------------
+### *event*
+```json
+{
+  "id": "1",
+  "name": "Red Sox @ Braves",
+  "category": 2,
+  "description": "",
+  "time": null,
+  "venue": {
+    "name": "Turner Field",
+    "latitude": null,
+    "longitude": null
+  }
+}
+```
+---------------------------------------
+### *venue*
+```json
+{
+  "name": "Turner Field",
+  "latitude": null,
+  "longitude": null
+}
+```
