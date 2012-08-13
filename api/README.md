@@ -25,7 +25,8 @@ Last-minute ticket marketplace.
   "negotiable": {boolean}
 }
 ```
-**Response Type: `ticket`**
+**Response Type: **
+```ticket```
 
 ### POST /offer/{ticket_id}
 
