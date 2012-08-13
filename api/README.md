@@ -1,5 +1,5 @@
 # Ticketless API
-Last-minute ticket marketplace.
+A REST-ful interface to the Ticketless database.
 
 ## Installation
 
@@ -76,7 +76,7 @@ Last-minute ticket marketplace.
 
 ## API Response Types
 
-**All API responses will be wrapped in the following json:**
+**All API responses will be wrapped in the following JSON structure:**
 ```json
 {
   "success": {boolean},
