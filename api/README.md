@@ -39,7 +39,7 @@ A REST-ful interface to the Ticketless database.
 **Response Type:** `ticket`
 
 ---------------------------------------
-### POST */offer/{ticket_id}*
+### POST */ticket/{ticket_id}/offer*
 **Purpose:** Adds an offer for, or buys, a ticket  
 **Body:**
 ```json
@@ -48,7 +48,7 @@ A REST-ful interface to the Ticketless database.
   "price": {decimal}
 }
 ```
-**Response Type:** `offer`
+**Response Type:** `ticket`
 
 ---------------------------------------
 ### GET */event/{event_id}*
