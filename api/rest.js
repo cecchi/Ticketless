@@ -12,7 +12,7 @@ rest.error = function(req, res, error) {
 rest.success = function(req, res, results) {
   res.json({
     'success' : true,
-    'error'   : false,
+    'error'   : null,
     'results' : results
   });
 }

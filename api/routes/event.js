@@ -9,7 +9,9 @@ event.get = function(req, res) {
     rest.error(req, res, msg);
   });
 
-  var sql = squel.select()
+  req.check(0, 'Invalid event ID').isInt();
+
+  var sql = db.squel.select()
     .field(db.schemas('events', 'event'))
     .field(db.schemas('venues', 'venue'))
     .from('events', 'event')
@@ -27,14 +29,14 @@ event.get = function(req, res) {
 }
 
 event.tickets = function(req, res) {
-  
+
   req.onValidationError(function(msg) {
     rest.error(req, res, msg);
   });
 
   req.check(0, 'Invalid event ID').isInt();
 
-  var sql = squel.select()
+  var sql = db.squel.select()
     .field(db.schemas('tickets', 'ticket'))
     .field(db.schemas('events', 'event'))
     .field(db.schemas('venues', 'venue'))

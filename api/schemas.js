@@ -19,6 +19,9 @@ var schemas = {
   ],
   'users' : [
     '*'
+  ],
+  'offers' : [
+    'price'
   ]
 }
 

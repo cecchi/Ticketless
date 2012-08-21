@@ -4,11 +4,67 @@ var db   = require('../database.js'),
 var ticket = {};
 
 ticket.add = function(req, res) {
-  res.send('<h1>ticket.add</h1>');
+
+  req.onValidationError(function(msg) {
+    rest.error(req, res, msg);
+  });
+
+  req.check('event', 'Invalid event ID').isInt();
+  req.check('section', 'Invalid section').is(/^[A-Za-z0-9_-]+$/);
+  req.check('row', 'Invalid row').isInt();
+  req.check('seats', 'Invalid seat').is(/^(\d+,?)*\d$/);
+  req.check('seller', 'Invalid ticket ID').isInt();
+  req.check('price', 'Invalid ticket ID').isDecimal();
+  req.sanitize('available', 'Invalid availability').toBoolean();
+  req.sanitize('negotiable', 'Invalid negotiability').toBoolean();
+
+  if(req.validationErrors()) {
+    return;
+  }
+
+  var sql = db.squel.insert()
+    .into('tickets')
+    .set('event', req.body.event)
+    .set('section', req.body.section)
+    .set('row', req.body.row)
+    .set('seats', req.body.seats)
+    .set('seller', req.body.seller)
+    .set('price', req.body.price)
+    .set('available', req.body.available)
+    .set('negotiable', req.body.negotiable)
+    .toString();
+
+  db.query(sql, function(err, results) {
+    if(err) {
+      rest.error(req, res, err);
+    } else {
+      req.params = [results.insertId];
+      ticket.get(req, res);
+    }
+  });
 }
 
 ticket.update = function(req, res) {
-  res.send('<h1>ticket.update</h1>');
+
+  req.onValidationError(function(msg) {
+    rest.error(req, res, msg);
+  });
+
+  req.check('id', 'Invalid user ID').isInt();
+  req.check('phone', 'Invalid 10-digit phone number').len(10,10).isInt();
+
+  var sql = db.squel.update()
+    .table(db.schemas('users', 'user'))
+    .set('user.phone', req.body.phone)
+    .where('user.id = ' + req.body.id)
+
+  db.queryMap(sql, function(err, results) {
+    if(err) {
+      rest.error(req, res, err);
+    } else {
+      rest.success(req, res, results);
+    }
+  });
 }
 
 ticket.get = function(req, res) {
@@ -17,7 +73,7 @@ ticket.get = function(req, res) {
     rest.error(req, res, msg);
   });
 
-  req.check(0, 'Invalid ticket ID').len(1,1);
+  req.check(0, 'Invalid ticket ID').isInt();
 
   if(req.validationErrors()) {
     return;
@@ -48,7 +104,31 @@ ticket.get = function(req, res) {
 }
 
 ticket.offer = function(req, res) {
-  res.send('<h1>ticket.offer</h1>');
+
+  req.onValidationError(function(msg) {
+    rest.error(req, res, msg);
+  });
+
+  req.check(0, 'Invalid ticket ID').isInt();
+  req.check('amount', 'Invalid offer amount').isDecimal();
+
+  var sql = db.squel.insert()
+    .into('offers')
+    .set('ticket', req.params[0])
+    .set('amount', req.body.amount)
+    .toString();
+
+    console.log(sql);
+
+  db.query(sql, function(err, results) {
+    if(err) {
+      rest.error(req, res, err);
+    } else {
+      req.params = [results.insertId];
+      ticket.get(req, res, results);
+    }
+  });
+
 }
 
 module.exports = ticket;
