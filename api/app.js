@@ -9,6 +9,11 @@ var config    = require('./config.js'),
 var app = express();
 app.use(express.bodyParser());
 app.use(validator);
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
 
 // Map requests
 (function(a, route){
