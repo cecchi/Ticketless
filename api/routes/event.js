@@ -54,6 +54,10 @@ event.tickets = function(req, res) {
     if(err) {
       rest.error(req, res, err);
     } else {
+      results.map(function(ticket) {
+        ticket.seats = ticket.seats.split(',');
+        return ticket;
+      });
       rest.success(req, res, results);
     }
   });

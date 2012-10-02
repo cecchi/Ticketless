@@ -15,6 +15,7 @@ var schemas = {
     'id',
     'section',
     'row',
+    'seats',
     'price'
   ],
   'users' : [
