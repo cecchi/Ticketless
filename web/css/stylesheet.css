@@ -1,0 +1,72 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-image: url(../images/background@1440.jpg);
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+#welcome {
+  background: rgba(0, 0, 0, .65);
+  position: absolute;
+  left: 0px;
+  bottom: 100px;
+  height: 165px;
+  width: 100%;
+  min-width: 880px;
+  text-align: center;
+}
+#column {
+  text-align: left;
+  width: 100%;
+  min-width: 870px;
+  max-width: 1000px;
+  display: inline-block;
+  height: 165px;
+  position: relative;
+  padding: 0px;
+  overflow: hidden;
+}
+h1, h2 {
+  margin: 0px;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+hgroup {
+  position: relative;
+  top: 45px;
+  left: 10px;
+}
+h1 {
+  font-family: 'Cookie';
+  font-size: 72px;
+  line-height: 50px;
+}
+h2 {
+  font-family: 'MuseoSans300Regular';
+  font-size: 24px;
+}
+button {
+  background: url(../images/download.png) no-repeat 0px 0px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -27px;
+  width: 219px;
+  height: 54px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+button:hover {
+  background: url(../images/download.png) no-repeat 0px -54px;
+}
