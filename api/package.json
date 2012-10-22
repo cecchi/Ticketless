@@ -7,6 +7,7 @@
     "express": "3.0.0rc2",
     "express-validator": "0.2.3",
     "mysql": "2.0.0-alpha3",
-    "squel": "1.0.3"
+    "squel": "1.0.3",
+    "underscore": "1.4.2"
   }
 }

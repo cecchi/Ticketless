@@ -1,7 +1,8 @@
-var ticket = require('./routes/ticket.js'),
-    event  = require('./routes/event.js'),
-    venue  = require('./routes/venue.js')
-    user   = require('./routes/user.js');
+var ticket    = require('./routes/ticket.js'),
+    event     = require('./routes/event.js'),
+    venue     = require('./routes/venue.js'),
+    category  = require('./routes/category.js'),
+    user      = require('./routes/user.js');
 
 /* Double escape back-slashes! */
 var routes = {
@@ -37,6 +38,12 @@ var routes = {
       '/edit': {
         put: venue.edit
       }
+    }
+  },
+  '/category': {
+    get: category.get,
+    '/(\\d+)': {
+      get: category.get
     }
   },
   '/user': {

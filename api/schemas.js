@@ -23,6 +23,10 @@ var schemas = {
   ],
   'offers' : [
     'price'
+  ],
+  'categories' : [
+    'id',
+    'name'
   ]
 }
 
