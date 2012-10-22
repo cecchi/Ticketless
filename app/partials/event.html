@@ -1,0 +1,15 @@
+<section class="page" id="event">
+  <header id="information">
+    <h1>Patriots Vs. Ravens</h1>
+    <time datetime="2012-09-23T18:00:00Z">Sept. 23, 8:30 PM</time>
+    <h2>Gillette Stadium</h1>
+  </header>
+
+  <ol id="tickets">
+    <li ng-repeat="ticket in tickets.results">
+      <h2>Section <b>{{ticket.section}}</b>, Row <b>{{ticket.row}}</b></h2>
+      <h3>{{ticket.seats.length}} Tickets</h3>
+      <span>{{ticket.price | currency:"$"}} ea.</span>
+    </li>
+  </ol>
+</section>

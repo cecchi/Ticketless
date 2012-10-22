@@ -1,0 +1,18 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org" ng-app="ticketless">
+  <head>
+    <link rel="stylesheet/less" type="text/css" href="css/stylesheet.less">
+    <link rel="stylesheet/less" type="text/css" href="css/iphone.less" media="only screen and (max-device-width: 640px)" />
+    <script type="text/javascript" src="lib/less/less.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <header id="top" ng-include src="'partials/header.html'"></header>
+    <div id="page" class="{{$route.current.scope.name}}" ng-view></div>
+  </body>
+</html>

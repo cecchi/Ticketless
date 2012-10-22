@@ -1,0 +1,212 @@
+@import "css/fonts.css";
+@import "elements.less";
+
+/* Colors */
+@primary:        #BA3262;
+@secondary:      #333333;
+@logo:           #EFEFEF;
+@event-info-bg:  #FFFFFF;
+@result-bg:      #EEEEEE;
+@result-outline: #BFBFBF;
+@result-border:  #FFFFFF;
+
+/* Dimensions */
+@main-nav-height:   44px;
+@breadcrumb-height: 19px;
+@event-info-height: 44px;
+
+/* Mixins */
+
+/* Resets */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Styles */
+body {
+  text-transform: uppercase;
+  font-family: 'MuseoSans500Regular';
+  margin: 0px;
+  font-size: 14px;
+  height: 100%;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+h2 {
+  font-size: 1.0em;
+  line-height: 1.0em;
+}
+h3 {
+  font-size: 0.8em;
+  line-height: 0.8em;
+}
+
+header#top {
+  * {
+    position: relative;
+  }
+  nav#main {
+    .gradient(#323232, #303030, #343434);
+    height: @main-nav-height;
+    z-index: 30;
+    .drop-shadow(0px, -4px, 4px, 4px, 1.0);
+    text-align: center;
+    color: @logo;
+    font-family: 'Cookie';
+    text-transform: none;
+    font-size: 2.8em;
+    line-height: 1.3em;
+    text-shadow: rgba(0, 0, 0, 1) 1px 1px 2px;
+    button {
+      text-transform: uppercase;
+      position: absolute;
+      top: 8px;
+      height: 28px;
+      border: 1px solid #1A1A1A;
+      .drop-shadow(0px, 1px, 0px, 0px, 0.1, #FFFFFF);
+      .gradient(#353535, #3C3C3C, #393939);
+      .rounded(3px);
+      color: #C1C1C1;
+      text-shadow: rgba(0, 0, 0, .8) 0px 1px 1px;
+      padding: 0px 6px;
+      font-family: 'MuseoSans500Regular';
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
+    button#back-icon {
+      left: 16px;
+      .border-radius(3px, 3px, 1px, 1px);
+      text-indent: -2px;
+    }
+    /* Arrow hack: should use background image */
+    button#back-icon:after, #back-icon:before {
+      right: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    button#back-icon:after {
+      border-color: rgba(57, 57, 57, 0);
+      border-right-color: #393939;
+      border-width: 13px;
+      top: 50%;
+      margin-top: -13px;
+    }
+    button#back-icon:before {
+      border-color: rgba(26, 26, 26, 0);
+      border-right-color: #1A1A1A;
+      border-width: 14px;
+      top: 50%;
+      margin-top: -14px;
+    }
+    button#map-icon {
+      right: 6px;
+    }
+  }
+  nav#breadcrumb {
+    .gradient(#515151, #575757, #464646);
+    color: #FFFFFF;
+    height: @breadcrumb-height;
+    line-height: @breadcrumb-height + 2;
+    padding-left: 4px;
+    font-size: 11px;
+    font-family: 'MuseoSans300Regular';
+    .drop-shadow(0px, 0px, 2px, 1px, 0.7);
+    text-shadow: rgba(0, 0, 0, 1) 1px 1px 2px;
+    z-index: 20;
+    a {
+      &:after {
+        content: ' \00BB ';
+      }
+      &:last-child:after {
+        content: none;
+      }
+    }
+  }
+}
+
+/* Event Page */
+section#event {
+  z-index: 10;
+  header#information {
+    background: @event-info-bg;
+    border-left: 2px solid @primary;
+    padding: 5px 4px;
+    color: @primary !important;
+    .drop-shadow(0px, -4px, 4px, 4px, 0.8);
+    height: @event-info-height - 10px; /* padding */
+    position: relative;
+    z-index: 10;
+    h2 {
+      font-family: 'MuseoSans300Regular';
+    }
+    time {
+      font-size: 1em;
+      line-height: 1em;
+    }
+    time {
+      float: right;
+      font-family: 'MuseoSans300Italic';
+    }
+  }
+  ol#tickets {
+    padding: 0px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: @event-info-height + @main-nav-height + @breadcrumb-height;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: auto;
+    li {
+      margin-bottom: 1px;
+      padding: 5px 4px;
+      list-style-type: none;
+      border: 1px solid @result-border;
+      outline: 1px solid @result-outline;
+      border-width: 1px 0px;
+      background: @result-bg;
+      position: relative;
+      h2 {
+        color: @primary;
+        margin-bottom: 3px;
+      }
+      h3 {
+        color: @secondary;
+      }
+      span {
+        @height: 18px;
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        margin-top: floor(@height * -0.5);
+        height: @height - 3px;
+        line-height: @height;
+        .rounded(9px);
+        background: @primary;
+        color: #FFFFFF;
+        font-size: 0.8em;
+        padding: 1px 6px 2px;
+        text-transform: none;
+        text-shadow: #87293C 1px 1px 0px;
+      }
+    }
+  }
+}
