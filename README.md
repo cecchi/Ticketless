@@ -1,5 +1,5 @@
-Ticketless API
-==============
+Ticketless
+==========
 
 Last-minute ticket marketplace.
 
@@ -7,10 +7,10 @@ Structure
 ---------
 
 /api
-  - REST-ful interface for the Ticketless database
+  - REST-ful interface to the Ticketless data.
 
-/mobile
-  - All mobile app related code (not yet developed)
+/app
+  - User interface developed with AngularJS. Inteded to be bundled as a PhoneGap application.
 
-/mobile
-  - All web app & website related code (not yet developed)
+/web
+  - TicketlessApp.com website.
