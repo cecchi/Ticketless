@@ -13,4 +13,4 @@ Structure
   - User interface developed with AngularJS. Inteded to be bundled as a PhoneGap application.
 
 /web
-  - TicketlessApp.com website.
+  - [TicketlessApp.com](http://www.ticketlessapp.com) website.
